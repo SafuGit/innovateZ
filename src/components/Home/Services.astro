@@ -1,0 +1,247 @@
+---
+const services = [
+	{
+		menuLabel: "Web Development",
+		title: "High-Performance Web Solutions",
+		description:
+			"We architect and build scalable, secure, and lightning-fast web applications. From progressive web apps to complex e-commerce platforms, we use the latest technology stacks to ensure your digital presence is robust and future-proof.",
+		highlights: [
+			{
+				icon: "bolt",
+				title: "Optimized Performance",
+				description: "Ultra-fast load times and smooth interactions.",
+			},
+			{
+				icon: "security",
+				title: "Enterprise Security",
+				description: "Built with modern security protocols and best practices.",
+			},
+			{
+				icon: "responsive_layout",
+				title: "Responsive Design",
+				description:
+					"Flawless experiences across mobile, tablet, and desktop.",
+			},
+			{
+				icon: "hub",
+				title: "API Integration",
+				description:
+					"Seamless connection to your existing backend and third-party tools.",
+			},
+		],
+	},
+	{
+		menuLabel: "App Development",
+		title: "Mobile Apps Built For Growth",
+		description:
+			"We design and engineer native and cross-platform applications with clean architecture, intuitive UX, and dependable performance across iOS and Android ecosystems.",
+		highlights: [
+			{
+				icon: "smartphone",
+				title: "Native + Cross-Platform",
+				description: "Launch faster with Flutter/React Native or full native stacks.",
+			},
+			{
+				icon: "design_services",
+				title: "UX-Focused Interfaces",
+				description: "Clear navigation, strong accessibility, and polished interactions.",
+			},
+			{
+				icon: "notifications_active",
+				title: "Realtime Engagement",
+				description: "Push notifications, in-app messaging, and event-driven updates.",
+			},
+			{
+				icon: "monitoring",
+				title: "Analytics Ready",
+				description: "Built-in product analytics and crash monitoring from day one.",
+			},
+		],
+	},
+	{
+		menuLabel: "Enterprise Systems",
+		title: "Reliable Systems For Complex Operations",
+		description:
+			"We modernize legacy operations and implement robust enterprise platforms that unify departments, automate workflows, and improve decision-making with centralized data.",
+		highlights: [
+			{
+				icon: "lan",
+				title: "System Integration",
+				description: "Connect ERP, CRM, HR, and finance tools into one workflow.",
+			},
+			{
+				icon: "account_tree",
+				title: "Process Automation",
+				description: "Reduce manual operations with rule-based and event-based automation.",
+			},
+			{
+				icon: "database",
+				title: "Data Governance",
+				description: "Role-based access, audit trails, and compliant data handling.",
+			},
+			{
+				icon: "insights",
+				title: "Executive Dashboards",
+				description: "Actionable reporting for leaders with live KPIs and trends.",
+			},
+		],
+	},
+	{
+		menuLabel: "AI Integration",
+		title: "AI Features Integrated Into Your Core Product",
+		description:
+			"We embed practical AI capabilities into existing platforms, from intelligent search and recommendations to internal copilots and workflow assistants tailored to your business context.",
+		highlights: [
+			{
+				icon: "psychology",
+				title: "Custom AI Workflows",
+				description: "Models aligned to your domain logic, data, and user behavior.",
+			},
+			{
+				icon: "find_in_page",
+				title: "Semantic Search",
+				description: "Context-aware retrieval across docs, tickets, and knowledge bases.",
+			},
+			{
+				icon: "manage_accounts",
+				title: "Copilot Experiences",
+				description: "Task assistants for teams in sales, support, and operations.",
+			},
+			{
+				icon: "verified_user",
+				title: "Safe AI Guardrails",
+				description: "Access controls, moderation, and monitoring for reliable outputs.",
+			},
+		],
+	},
+	{
+		menuLabel: "SaaS Products",
+		title: "From Idea To Revenue-Ready SaaS",
+		description:
+			"We partner with founders and teams to design, build, and launch SaaS products with scalable multi-tenant architecture, billing, onboarding, and growth-ready infrastructure.",
+		highlights: [
+			{
+				icon: "rocket_launch",
+				title: "MVP To Scale",
+				description: "Ship quickly, validate early, then scale with confidence.",
+			},
+			{
+				icon: "groups",
+				title: "Multi-Tenant Architecture",
+				description: "Tenant isolation, feature flags, and configurable workspaces.",
+			},
+			{
+				icon: "credit_card",
+				title: "Billing + Subscriptions",
+				description: "Usage tracking, plans, invoices, and payment integrations.",
+			},
+			{
+				icon: "construction",
+				title: "Product Iteration",
+				description: "Continuous delivery cycles backed by metrics and user feedback.",
+			},
+		],
+	},
+];
+
+---
+
+<!-- CTA / Quote Section -->
+<section
+	class="py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full border-t border-white/5"
+>
+	<h2 class="font-headline-lg text-headline-lg text-on-background mb-12">
+		Our Services
+	</h2>
+	<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+		<!-- Left Column: Menu -->
+		<div class="md:col-span-1 space-y-4" data-services-menu>
+			{services.map((service, index) => (
+				<button
+					type="button"
+					data-service-trigger={index}
+					aria-selected={index === 0 ? "true" : "false"}
+					class={`w-full text-left p-4 rounded-lg border-l-4 transition-all font-headline-md text-xl ${
+						index === 0
+							? "bg-surface-container-high border-primary text-primary"
+							: "bg-transparent border-transparent text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface"
+					}`}
+				>
+					{service.menuLabel}
+				</button>
+			))}
+		</div>
+		<!-- Right Column: Details Area -->
+		<div class="md:col-span-2">
+			{services.map((service, index) => (
+				<div
+					data-service-panel={index}
+					class={`glass-panel p-8 md:p-12 rounded-xl ${index === 0 ? "" : "hidden"}`}
+				>
+					<h3 class="font-display-lg text-3xl md:text-4xl text-on-background mb-6">
+						{service.title}
+					</h3>
+					<p class="font-body-lg text-on-surface-variant mb-8">
+						{service.description}
+					</p>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+						{service.highlights.map((highlight) => (
+							<div class="flex items-start gap-3">
+								<span class="material-symbols-outlined text-primary"
+									>{highlight.icon}</span
+								>
+								<div>
+									<h4 class="text-on-background font-bold mb-1">
+										{highlight.title}
+									</h4>
+									<p class="text-sm text-on-surface-variant">
+										{highlight.description}
+									</p>
+								</div>
+							</div>
+						))}
+					</div>
+				</div>
+			))}
+		</div>
+	</div>
+</section>
+
+<script>
+	const menuButtons = Array.from(
+		document.querySelectorAll<HTMLButtonElement>("[data-service-trigger]"),
+	);
+	const detailPanels = Array.from(
+		document.querySelectorAll<HTMLElement>("[data-service-panel]"),
+	);
+
+	const setActiveService = (activeIndex: number) => {
+		menuButtons.forEach((button) => {
+			const buttonIndex = Number(button.dataset.serviceTrigger);
+			const isActive = buttonIndex === activeIndex;
+
+			button.setAttribute("aria-selected", isActive ? "true" : "false");
+			button.classList.toggle("bg-surface-container-high", isActive);
+			button.classList.toggle("border-primary", isActive);
+			button.classList.toggle("text-primary", isActive);
+
+			button.classList.toggle("bg-transparent", !isActive);
+			button.classList.toggle("border-transparent", !isActive);
+			button.classList.toggle("text-on-surface-variant", !isActive);
+			button.classList.toggle("hover:bg-surface-container-low", !isActive);
+			button.classList.toggle("hover:text-on-surface", !isActive);
+		});
+
+		detailPanels.forEach((panel) => {
+			const panelIndex = Number(panel.dataset.servicePanel);
+			panel.classList.toggle("hidden", panelIndex !== activeIndex);
+		});
+	};
+
+	menuButtons.forEach((button) => {
+		button.addEventListener("click", () => {
+			const index = Number(button.dataset.serviceTrigger);
+			setActiveService(index);
+		});
+	});
+</script>
