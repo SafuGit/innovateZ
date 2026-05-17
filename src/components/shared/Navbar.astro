@@ -1,41 +1,106 @@
+---
+const navLinks = [
+	{ label: "Services", href: "#services", active: true },
+	{ label: "SaaS Products", href: "#products" },
+	{ label: "About Us", href: "#about" },
+	{ label: "Contact", href: "#contact" },
+];
+---
+
 <nav
-	class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2*margin-mobile)] md:w-[calc(100%-2*64px)] max-w-container-max px-6 py-3 rounded-full bg-surface/60 backdrop-blur-xl border border-white/10 shadow-2xl flex items-center justify-between"
+	class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2*margin-mobile)] min-[860px]:w-[calc(100%-2*64px)] max-w-container-max px-4 sm:px-6 py-3 rounded-3xl min-[860px]:rounded-full bg-surface/70 backdrop-blur-xl border border-white/10 shadow-2xl flex flex-col min-[860px]:flex-row min-[860px]:items-center min-[860px]:justify-between"
+	data-navbar
 >
-	<div class="flex items-center gap-2">
-		<img
-			src="/logo-crop.jpg"
-			alt="InnovateZ logo"
-			class="h-9 w-9 rounded-full object-cover shadow-lg"
-		/>
-		<div
-			class="font-headline-md text-2xl font-bold tracking-tighter text-primary"
+	<div class="flex items-center justify-between gap-4 min-[860px]:gap-6 max-[860px]:w-[80vw]">
+		<div class="flex items-center gap-2 min-w-0">
+			<img
+				src="/logo-crop.jpg"
+				alt="InnovateZ logo"
+				class="h-9 w-9 rounded-full object-cover shadow-lg shrink-0"
+			/>
+			<div class="font-headline-md text-xl sm:text-2xl font-bold tracking-tighter text-primary truncate">
+				InnovateZ
+			</div>
+		</div>
+
+		<button
+			type="button"
+			class="min-[860px]:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-on-background transition-colors hover:bg-white/10"
+			aria-label="Toggle navigation menu"
+			aria-expanded="false"
+			data-navbar-toggle
 		>
-			InnovateZ
+			<span class="material-symbols-outlined" data-navbar-icon>menu</span>
+		</button>
+	</div>
+
+	<div
+		class="hidden min-[860px]:flex items-center bg-white/5 rounded-full px-2 py-1 border border-white/5"
+		data-navbar-desktop
+	>
+		{navLinks.map((link) => (
+			<a
+				class={`px-4 py-2 rounded-full font-label-sm text-label-sm transition-all ${
+					link.active
+						? "text-primary hover:bg-white/10"
+						: "text-on-surface-variant hover:text-on-surface hover:bg-white/10"
+				}`}
+				href={link.href}
+			>
+				{link.label}
+			</a>
+		))}
+	</div>
+
+	<div class="hidden min-[860px]:block" data-navbar-cta>
+		<button class="bg-primary text-on-primary font-label-sm text-label-sm font-bold px-6 py-2.5 rounded-full hover:shadow-[0_0_15px_rgba(255,233,185,0.3)] transition-all scale-95 active:scale-90">
+			Get Quote
+		</button>
+	</div>
+
+	<div class="min-[860px]:hidden hidden w-full mt-4 rounded-3xl border border-white/10 bg-surface/95 p-3 shadow-2xl" data-navbar-mobile-menu>
+		<div class="flex flex-col gap-2">
+			{navLinks.map((link) => (
+				<a
+					class={`rounded-2xl px-4 py-3 font-label-sm text-label-sm transition-all ${
+						link.active
+							? "bg-surface-container-high text-primary"
+							: "text-on-surface-variant hover:bg-white/5 hover:text-on-surface"
+					}`}
+					href={link.href}
+				>
+					{link.label}
+				</a>
+			))}
+			<button class="mt-2 w-full bg-primary text-on-primary font-label-sm text-label-sm font-bold px-6 py-3 rounded-2xl hover:shadow-[0_0_15px_rgba(255,233,185,0.3)] transition-all">
+				Get Quote
+			</button>
 		</div>
 	</div>
-	<div
-		class="hidden md:flex items-center bg-white/5 rounded-full px-2 py-1 border border-white/5"
-	>
-		<a
-			class="text-primary px-4 py-2 rounded-full font-label-sm text-label-sm hover:bg-white/10 transition-all"
-			href="#">Services</a
-		>
-		<a
-			class="text-on-surface-variant px-4 py-2 rounded-full hover:text-on-surface hover:bg-white/10 transition-all font-label-sm text-label-sm"
-			href="#">SaaS Products</a
-		>
-		<a
-			class="text-on-surface-variant px-4 py-2 rounded-full hover:text-on-surface hover:bg-white/10 transition-all font-label-sm text-label-sm"
-			href="#">About Us</a
-		>
-		<a
-			class="text-on-surface-variant px-4 py-2 rounded-full hover:text-on-surface hover:bg-white/10 transition-all font-label-sm text-label-sm"
-			href="#">Contact</a
-		>
-	</div>
-	<button
-		class="bg-primary text-on-primary font-label-sm text-label-sm font-bold px-6 py-2.5 rounded-full hover:shadow-[0_0_15px_rgba(255,233,185,0.3)] transition-all scale-95 active:scale-90"
-	>
-		Get Quote
-	</button>
 </nav>
+
+<script>
+	// @ts-nocheck
+	const toggleButton = document.querySelector("[data-navbar-toggle]");
+	const icon = document.querySelector("[data-navbar-icon]");
+	const mobileMenu = document.querySelector("[data-navbar-mobile-menu]");
+
+	if (toggleButton && icon && mobileMenu) {
+		const setOpen = (isOpen) => {
+			mobileMenu.classList.toggle("hidden", !isOpen);
+			toggleButton.setAttribute("aria-expanded", isOpen ? "true" : "false");
+			icon.textContent = isOpen ? "close" : "menu";
+		};
+
+		toggleButton.addEventListener("click", () => {
+			const isOpen = mobileMenu.classList.contains("hidden");
+			setOpen(isOpen);
+		});
+
+		window.addEventListener("resize", () => {
+			if (window.innerWidth >= 860) {
+				setOpen(false);
+			}
+		});
+	}
+</script>
