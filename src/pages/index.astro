@@ -2,6 +2,7 @@
 import Hero from "../components/Home/Hero.astro";
 import Products from "../components/Home/Products.astro";
 import Services from "../components/Home/Services.astro";
+import Navbar from "../components/shared/Navbar.astro";
 import "../styles/global.css";
 ---
 
@@ -29,6 +30,7 @@ import "../styles/global.css";
 	<body
 		class="bg-background text-on-background antialiased min-h-screen flex flex-col font-body-md tech-grid"
 	>
+    <Navbar />
 		<main class="grow flex flex-col">
 			<Hero />
 			<Products />
