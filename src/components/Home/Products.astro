@@ -1,4 +1,22 @@
 ---
+const products = [
+	{
+		icon: "school",
+		title: "Smart Coaching System",
+		description:
+			"Complete AI automation for tuition centers and educators. Streamlines administrative tasks, predicts student performance trajectories, and optimizes curriculum delivery.",
+		linkText: "Learn More",
+		linkHref: "#",
+	},
+	{
+		icon: "ads_click",
+		title: "Smart Digital Marketing",
+		description:
+			"An AI-powered campaign orchestration tool. It dynamically optimizes ad spend across channels in real-time, utilizing predictive analytics to maximize conversion rates and ROI.",
+		linkText: "Learn More",
+		linkHref: "#",
+	},
+];
 
 ---
 
@@ -64,59 +82,30 @@
 				</div>
 			</div>
 		</div>
-		<div
-			class="glass-panel rounded-xl p-8 border border-white/10 flex flex-col"
-		>
+		{products.map((product) => (
 			<div
-				class="bg-surface-container p-3 w-fit rounded-lg border border-white/5 mb-6"
+				class="glass-panel rounded-xl p-8 border border-white/10 flex flex-col"
 			>
-				<span class="material-symbols-outlined text-primary text-3xl"
-					>school</span
+				<div
+					class="bg-surface-container p-3 w-fit rounded-lg border border-white/5 mb-6"
+				>
+					<span class="material-symbols-outlined text-primary text-3xl"
+						>{product.icon}</span
+					>
+				</div>
+				<h3 class="font-headline-md text-on-background mb-4">{product.title}</h3>
+				<p class="font-body-md text-on-surface-variant mb-6 grow">
+					{product.description}
+				</p>
+				<a
+					class="text-primary font-label-sm flex items-center gap-2 group"
+					href={product.linkHref}
+					>{product.linkText} <span
+						class="material-symbols-outlined group-hover:translate-x-1 transition-transform"
+						>arrow_forward</span
+					></a
 				>
 			</div>
-			<h3 class="font-headline-md text-on-background mb-4">
-				Smart Coaching System
-			</h3>
-			<p class="font-body-md text-on-surface-variant mb-6 grow">
-				Complete AI automation for tuition centers and educators. Streamlines
-				administrative tasks, predicts student performance trajectories, and
-				optimizes curriculum delivery.
-			</p>
-			<a
-				class="text-primary font-label-sm flex items-center gap-2 group"
-				href="#"
-				>Learn More <span
-					class="material-symbols-outlined group-hover:translate-x-1 transition-transform"
-					>arrow_forward</span
-				></a
-			>
-		</div>
-		<div
-			class="glass-panel rounded-xl p-8 border border-white/10 flex flex-col"
-		>
-			<div
-				class="bg-surface-container p-3 w-fit rounded-lg border border-white/5 mb-6"
-			>
-				<span class="material-symbols-outlined text-primary text-3xl"
-					>ads_click</span
-				>
-			</div>
-			<h3 class="font-headline-md text-on-background mb-4">
-				Smart Digital Marketing
-			</h3>
-			<p class="font-body-md text-on-surface-variant mb-6 grow">
-				An AI-powered campaign orchestration tool. It dynamically optimizes ad
-				spend across channels in real-time, utilizing predictive analytics to
-				maximize conversion rates and ROI.
-			</p>
-			<a
-				class="text-primary font-label-sm flex items-center gap-2 group"
-				href="#"
-				>Learn More <span
-					class="material-symbols-outlined group-hover:translate-x-1 transition-transform"
-					>arrow_forward</span
-				></a
-			>
-		</div>
+		))}
 	</div>
 </section>
