@@ -1,0 +1,243 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import contactInfo from "../data/contact";
+---
+
+<!-- Main Content: Redesigned Layout -->
+<BaseLayout>
+  <section
+    class="grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-32"
+  >
+    <div class="mb-16">
+      <h1 class="font-headline-lg-mobile md:font-headline-lg text-primary mb-6">
+        Get in Touch
+      </h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
+        Have a project in mind or want to discuss a partnership? Our team is ready
+        to help you scale your next big idea.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <!-- Left Column: Dominant Direct Channels Grid -->
+      <section class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Email Channel -->
+        <a
+          class="group bg-surface-container border border-white/10 hover:border-primary/50 rounded-xl p-8 flex flex-col items-start space-y-6 transition-all duration-300 hover:shadow-[0_0_30px_rgba(245,191,0,0.05)] relative overflow-hidden"
+          href={`mailto:${contactInfo.email}`}
+        >
+          <div
+            class="absolute -bottom-10 -right-10 w-32 h-32 bg-primary/5 blur-3xl rounded-full pointer-events-none group-hover:bg-primary/10 transition-colors"
+          >
+          </div>
+          <div
+            class="bg-surface-bright p-5 rounded-lg text-primary group-hover:scale-110 transition-transform duration-300"
+          >
+            <span class="material-symbols-outlined text-4xl" data-icon="mail"
+              >mail</span
+            >
+          </div>
+          <div>
+            <h3
+              class="font-headline-md text-2xl text-on-surface mb-2 font-bold tracking-tight"
+            >
+              Email
+            </h3>
+            <p class="font-body-md text-on-surface-variant text-lg">
+              {contactInfo.email}
+            </p>
+          </div>
+        </a>
+        <!-- Phone Channel -->
+        <a
+          class="group bg-surface-container border border-white/10 hover:border-primary/50 rounded-xl p-8 flex flex-col items-start space-y-6 transition-all duration-300 hover:shadow-[0_0_30px_rgba(245,191,0,0.05)] relative overflow-hidden"
+          href={`tel:${contactInfo.tel}`}
+        >
+          <div
+            class="absolute -bottom-10 -right-10 w-32 h-32 bg-primary/5 blur-3xl rounded-full pointer-events-none group-hover:bg-primary/10 transition-colors"
+          >
+          </div>
+          <div
+            class="bg-surface-bright p-5 rounded-lg text-primary group-hover:scale-110 transition-transform duration-300"
+          >
+            <span class="material-symbols-outlined text-4xl" data-icon="call"
+              >call</span
+            >
+          </div>
+          <div>
+            <h3
+              class="font-headline-md text-2xl text-on-surface mb-2 font-bold tracking-tight"
+            >
+              Phone
+            </h3>
+            <p class="font-body-md text-on-surface-variant text-lg">
+              {contactInfo.phone}
+            </p>
+          </div>
+        </a>
+        <!-- WhatsApp Channel -->
+        <a
+          class="group bg-surface-container border border-white/10 hover:border-primary/50 rounded-xl p-8 flex flex-col items-start space-y-6 transition-all duration-300 hover:shadow-[0_0_30px_rgba(245,191,0,0.05)] relative overflow-hidden"
+          href={contactInfo.whatsappUrl}
+        >
+          <div
+            class="absolute -bottom-10 -right-10 w-32 h-32 bg-primary/5 blur-3xl rounded-full pointer-events-none group-hover:bg-primary/10 transition-colors"
+          >
+          </div>
+          <div
+            class="bg-surface-bright p-5 rounded-lg text-primary group-hover:scale-110 transition-transform duration-300"
+          >
+            <span class="material-symbols-outlined text-4xl" data-icon="forum"
+              >forum</span
+            >
+          </div>
+          <div>
+            <h3
+              class="font-headline-md text-2xl text-on-surface mb-2 font-bold tracking-tight"
+            >
+              WhatsApp
+            </h3>
+            <p class="font-body-md text-on-surface-variant text-lg">
+              {contactInfo.whatsapp}
+            </p>
+          </div>
+        </a>
+        <!-- Social Channel -->
+        <a
+          class="group bg-surface-container border border-white/10 hover:border-primary/50 rounded-xl p-8 flex flex-col items-start space-y-6 transition-all duration-300 hover:shadow-[0_0_30px_rgba(245,191,0,0.05)] relative overflow-hidden"
+          href={contactInfo.linkedinUrl}
+        >
+          <div
+            class="absolute -bottom-10 -right-10 w-32 h-32 bg-primary/5 blur-3xl rounded-full pointer-events-none group-hover:bg-primary/10 transition-colors"
+          >
+          </div>
+          <div
+            class="bg-surface-bright p-5 rounded-lg text-primary group-hover:scale-110 transition-transform duration-300"
+          >
+            <span class="material-symbols-outlined text-4xl" data-icon="share"
+              >share</span
+            >
+          </div>
+          <div>
+            <h3
+              class="font-headline-md text-2xl text-on-surface mb-2 font-bold tracking-tight"
+            >
+              LinkedIn
+            </h3>
+            <p
+              class="font-body-md text-on-surface-variant text-lg flex items-center space-x-2"
+            >
+              {contactInfo.linkedinHandle}
+            </p>
+          </div>
+        </a><a
+          class="group bg-surface-container border border-white/10 hover:border-primary/50 rounded-xl p-8 flex flex-col items-start space-y-6 transition-all duration-300 hover:shadow-[0_0_30px_rgba(245,191,0,0.05)] relative overflow-hidden"
+          href={contactInfo.instagramUrl}
+          ><div
+            class="absolute -bottom-10 -right-10 w-32 h-32 bg-primary/5 blur-3xl rounded-full pointer-events-none group-hover:bg-primary/10 transition-colors"
+          >
+          </div><div
+            class="bg-surface-bright p-5 rounded-lg text-primary group-hover:scale-110 transition-transform duration-300"
+          >
+            <span class="material-symbols-outlined text-4xl">public</span>
+          </div><div>
+            <h3
+              class="font-headline-md text-2xl text-on-surface mb-2 font-bold tracking-tight"
+            >
+              Instagram
+            </h3><p class="font-body-md text-on-surface-variant text-lg">
+              {contactInfo.instagramHandle}
+            </p>
+          </div></a
+        ><a
+          class="group bg-surface-container border border-white/10 hover:border-primary/50 rounded-xl p-8 flex flex-col items-start space-y-6 transition-all duration-300 hover:shadow-[0_0_30px_rgba(245,191,0,0.05)] relative overflow-hidden"
+          href={contactInfo.facebookUrl}
+          ><div
+            class="absolute -bottom-10 -right-10 w-32 h-32 bg-primary/5 blur-3xl rounded-full pointer-events-none group-hover:bg-primary/10 transition-colors"
+          >
+          </div><div
+            class="bg-surface-bright p-5 rounded-lg text-primary group-hover:scale-110 transition-transform duration-300"
+          >
+            <span class="material-symbols-outlined text-4xl">public</span>
+          </div><div>
+            <h3
+              class="font-headline-md text-2xl text-on-surface mb-2 font-bold tracking-tight"
+            >
+              Facebook
+            </h3><p class="font-body-md text-on-surface-variant text-lg">
+              {contactInfo.facebookHandle}
+            </p>
+          </div></a
+        >
+      </section>
+      <!-- Right Column: Reduced Weight Form Panel -->
+      <section
+        class="lg:col-span-4 bg-[#141414] border border-white/5 rounded-xl p-8 sticky top-32"
+      >
+        <h2
+          class="font-headline-md text-xl text-on-surface mb-6 border-b border-white/5 pb-4"
+        >
+          Send us a message
+        </h2>
+        <form class="space-y-5 w-full relative">
+          <div class="space-y-2 input-glow transition-all duration-300">
+            <label
+              class="font-label-sm text-label-sm text-on-surface-variant block"
+              for="name">Full Name</label
+            >
+            <input
+              class="w-full bg-surface-dim border border-[#27272A] focus:border-primary rounded px-4 py-3 text-on-surface font-body-md placeholder-secondary-fixed-dim/50 outline-none transition-colors"
+              id="name"
+              placeholder="Enter your full name"
+              type="text"
+            />
+          </div>
+          <div class="space-y-2 input-glow transition-all duration-300">
+            <label
+              class="font-label-sm text-label-sm text-on-surface-variant block"
+              for="email">Email Address</label
+            >
+            <input
+              class="w-full bg-surface-dim border border-[#27272A] focus:border-primary rounded px-4 py-3 text-on-surface font-body-md placeholder-secondary-fixed-dim/50 outline-none transition-colors"
+              id="email"
+              placeholder="system@domain.com"
+              type="email"
+            />
+          </div>
+          <div class="space-y-2 input-glow transition-all duration-300">
+            <label
+              class="font-label-sm text-label-sm text-on-surface-variant block"
+              for="project">Project Type</label
+            >
+            <select
+              class="w-full bg-surface-dim border border-[#27272A] focus:border-primary rounded px-4 py-3 text-on-surface font-body-md outline-none transition-colors appearance-none"
+              id="project"
+            >
+              <option>SaaS Architecture</option>
+              <option>Enterprise Integration</option>
+              <option>Security Audit</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="space-y-2 input-glow transition-all duration-300">
+            <label
+              class="font-label-sm text-label-sm text-on-surface-variant block"
+              for="message">Message</label
+            >
+            <textarea
+              class="w-full bg-surface-dim border border-[#27272A] focus:border-primary rounded px-4 py-3 text-on-surface font-body-md placeholder-secondary-fixed-dim/50 outline-none transition-colors resize-none"
+              id="message"
+              placeholder="Detail your requirements..."
+              rows="3"></textarea>
+          </div>
+          <button
+            class="w-full bg-primary/10 text-primary border border-primary/20 hover:bg-primary hover:text-on-primary font-label-sm text-label-sm font-bold py-3 rounded DEFAULT transition-all duration-300 flex items-center justify-center space-x-2 mt-4"
+            type="submit"
+            ><span>Send Inquiry</span><span
+              class="material-symbols-outlined text-sm">arrow_forward</span
+            ></button
+          >
+        </form>
+      </section>
+    </div>
+  </section>
+</BaseLayout>
