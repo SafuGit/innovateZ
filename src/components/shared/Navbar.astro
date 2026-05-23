@@ -1,9 +1,11 @@
 ---
+const currentPath = Astro.url.pathname;
+
 const navLinks = [
-	{ label: "Services", href: "#services", active: true },
-	{ label: "SaaS Products", href: "#products" },
-	{ label: "About Us", href: "#about" },
-	{ label: "Contact", href: "#contact" },
+	{ label: "Services", href: "/#services", active: currentPath === "/" },
+	{ label: "SaaS Products", href: "/#products", active: false },
+	{ label: "About Us", href: "/about-us", active: currentPath === "/about-us" },
+	{ label: "Contact", href: "/#contact", active: false },
 ];
 ---
 

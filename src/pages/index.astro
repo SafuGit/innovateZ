@@ -1,42 +1,14 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Home/Hero.astro";
 import Products from "../components/Home/Products.astro";
 import Services from "../components/Home/Services.astro";
-import Navbar from "../components/shared/Navbar.astro";
-import Footer from "../components/shared/Footer.astro";
-import "../styles/global.css";
+import CTA from "../components/Home/CTA.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-			rel="stylesheet"
-		/>
-		<link
-			href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400&family=JetBrains+Mono:wght@500&family=Space+Grotesk:wght@500;600;700&display=swap"
-			rel="stylesheet"
-		/>
-		<link
-			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-			rel="stylesheet"
-		/>
-		<title>Astro</title>
-	</head>
-	<body
-		class="bg-background text-on-background antialiased min-h-screen flex flex-col font-body-md tech-grid"
-	>
-    <Navbar />
-		<main class="grow flex flex-col">
-			<Hero />
-			<Products />
-      <Services />
-		</main>
-    <Footer />
-	</body>
-</html>
+<BaseLayout title="InnovateZ | Home" description="InnovateZ builds scalable digital products with a modern engineering approach.">
+	<Hero />
+	<Products />
+	<Services />
+  <CTA />
+</BaseLayout>
