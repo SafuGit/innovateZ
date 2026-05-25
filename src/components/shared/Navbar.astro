@@ -1,4 +1,7 @@
 ---
+import { Image } from 'astro:assets';
+import logoCrop from '../../assets/logo-crop.jpg';
+
 const currentPath = Astro.url.pathname;
 
 const navLinks = [
@@ -14,9 +17,14 @@ const navLinks = [
 >
 	<div class="flex items-center justify-between gap-4 min-[860px]:gap-6 max-[860px]:w-[80vw]">
 		<div class="flex items-center gap-2 min-w-0">
-			<img
-				src="/logo-crop.jpg"
+			<Image
+				src={logoCrop}
 				alt="InnovateZ logo"
+				width={36}
+				height={36}
+				loading="eager"
+				decoding="async"
+				fetchpriority="high"
 				class="h-9 w-9 rounded-full object-cover shadow-lg shrink-0"
 			/>
 			<div class="font-headline-md text-xl sm:text-2xl font-bold tracking-tighter text-primary truncate">

@@ -45,15 +45,31 @@ const {
 		<!-- Generator Meta (optional) -->
 		<meta name="generator" content={Astro.generator} />
 		
-		<!-- Google Fonts with optimized loading -->
+		<!-- Google Fonts loaded without blocking first paint -->
 		<link
+			rel="preload"
 			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-			rel="stylesheet"
+			as="style"
+			onload="this.onload=null;this.rel='stylesheet'"
 		/>
+		<noscript>
+			<link
+				href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+				rel="stylesheet"
+			/>
+		</noscript>
 		<link
+			rel="preload"
 			href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400&family=JetBrains+Mono:wght@500&family=Space+Grotesk:wght@500;600;700&display=swap"
-			rel="stylesheet"
+			as="style"
+			onload="this.onload=null;this.rel='stylesheet'"
 		/>
+		<noscript>
+			<link
+				href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400&family=JetBrains+Mono:wght@500&family=Space+Grotesk:wght@500;600;700&display=swap"
+				rel="stylesheet"
+			/>
+		</noscript>
 	</head>
 	<body
 		class="bg-background text-on-background antialiased min-h-screen flex flex-col font-body-md tech-grid"

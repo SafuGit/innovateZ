@@ -1,3 +1,8 @@
+---
+import { Image } from 'astro:assets';
+import safwanPortrait from '../../assets/safwan.jpeg';
+---
+
 <section class="growtive bg-grid-pattern py-20 md:py-30">
 	<div
 		class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative"
@@ -103,10 +108,14 @@
 					class="w-full h-full relative overflow-hidden rounded-xl bg-surface-container-low group"
 				>
 					<!-- Abstract Conceptual Image -->
-					<img
+					<Image
+						src={safwanPortrait}
 						alt="Safwan Sadid"
+						width={1200}
+						height={1599}
+						loading="lazy"
+						decoding="async"
 						class="object-cover w-full h-full grayscale hover:grayscale-0 transition-all duration-700 opacity-80 group-hover:opacity-100 scale-105 group-hover:scale-100"
-						src="/safwan.jpeg"
 					/>
 					<!-- Overlay Gradient for Depth -->
 					<div
