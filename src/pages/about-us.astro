@@ -4,9 +4,18 @@ import AboutIntro from "../components/About/AboutIntro.astro";
 import OurCEO from "../components/About/OurCEO.astro";
 import AboutValues from "../components/About/AboutValues.astro";
 import AboutProcess from "../components/About/AboutProcess.astro";
+
+const title = "About InnovateZ | Modern Engineering & Digital Products";
+const description = "Discover InnovateZ's mission to build scalable digital products. Learn about our team, values, process, and commitment to excellence in software engineering.";
+const keywords = "about us, company values, engineering team, digital innovation, product development, cloud solutions";
 ---
 
-<BaseLayout title="InnovateZ | About Us" description="Learn how InnovateZ builds digital products with clarity, speed, and care.">
+<BaseLayout 
+  {title}
+  {description}
+  {keywords}
+  ogType="website"
+>
 	<OurCEO />
 	<AboutIntro />
 	<AboutValues />

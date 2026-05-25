@@ -1,10 +1,19 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import contactInfo from "../data/contact";
+
+const title = "Contact InnovateZ | Get In Touch with Our Team";
+const description = "Ready to start your next project? Contact InnovateZ today. Reach out via email, phone, WhatsApp, or our contact form. We're here to help you scale.";
+const keywords = "contact us, get in touch, inquiry, project consultation, digital services, tech support";
 ---
 
 <!-- Main Content: Redesigned Layout -->
-<BaseLayout>
+<BaseLayout 
+  {title}
+  {description}
+  {keywords}
+  ogType="website"
+>
   <section
     class="grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-32"
   >

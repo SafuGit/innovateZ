@@ -4,9 +4,18 @@ import Hero from "../components/Home/Hero.astro";
 import Products from "../components/Home/Products.astro";
 import Services from "../components/Home/Services.astro";
 import CTA from "../components/Home/CTA.astro";
+
+const title = "InnovateZ | Build Scalable Digital Products";
+const description = "InnovateZ builds scalable, high-performance digital products with modern engineering. Expert in strategy, design, and cloud-native development.";
+const keywords = "digital products, scalable software, engineering, cloud-native, custom development, tech strategy";
 ---
 
-<BaseLayout title="InnovateZ | Home" description="InnovateZ builds scalable digital products with a modern engineering approach.">
+<BaseLayout 
+  {title}
+  {description}
+  {keywords}
+  ogType="website"
+>
 	<Hero />
 	<Products />
 	<Services />

@@ -1,26 +1,51 @@
 ---
 import Navbar from "../components/shared/Navbar.astro";
 import Footer from "../components/shared/Footer.astro";
+import SEO from "../components/shared/SEO.astro";
 import "../styles/global.css";
 
 const {
-	title = "InnovateZ",
+	title = "InnovateZ | Home",
 	description = "InnovateZ builds scalable digital products with a modern engineering approach.",
+	ogImage,
+	ogImageAlt,
+	ogType,
+	keywords,
+	canonical,
 	showNavbar = true,
 	showFooter = true,
+	publishDate,
+	updateDate,
 } = Astro.props;
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
+		
+		<!-- SEO Component with all metadata -->
+		<SEO
+			{title}
+			{description}
+			{ogImage}
+			{ogImageAlt}
+			{ogType}
+			{keywords}
+			{canonical}
+			{publishDate}
+			{updateDate}
+		/>
+		
+		<!-- Favicon -->
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 		<link rel="manifest" href="/site.webmanifest" />
-		<meta name="viewport" content="width=device-width" />
+		
+		<!-- Generator Meta (optional) -->
 		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content={description} />
+		
+		<!-- Google Fonts with optimized loading -->
 		<link
 			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
 			rel="stylesheet"
@@ -29,11 +54,6 @@ const {
 			href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400&family=JetBrains+Mono:wght@500&family=Space+Grotesk:wght@500;600;700&display=swap"
 			rel="stylesheet"
 		/>
-		<link
-			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-			rel="stylesheet"
-		/>
-		<title>{title}</title>
 	</head>
 	<body
 		class="bg-background text-on-background antialiased min-h-screen flex flex-col font-body-md tech-grid"
